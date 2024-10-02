@@ -1,12 +1,28 @@
-import React from 'react';
-import Header from "./Header";
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+import { useSelector } from 'react-redux';
+import GptPage from './GptPage';
 
 const Body = () => {
+  const gpts = useSelector((store)=>store.gpts.showGptSearch)
+
   return (
-    <div>
-        <Header/>
-        <h1>Body</h1>
+    <>
+    { 
+      gpts ?
+      <div>
+        <GptPage/>
+      </div> :
+      <div>
+      <Header/>
+      <Outlet/>
     </div>
+
+
+
+    }
+
+    </>
   )
 }
 

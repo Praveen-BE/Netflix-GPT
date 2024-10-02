@@ -1,10 +1,12 @@
 import './App.css';
 import React from 'react';
-// import Body from './Components/Body';
-// import Footer from './Components/Footer';
 import Login from './Components/Login';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
+import { appStore } from './utils/appStore';
+import Browse from './Components/Browse';
 import Body from './Components/Body';
+import GptPage from './Components/GptPage';
 
 function App() {
 
@@ -12,22 +14,34 @@ function App() {
   const appRouter = createBrowserRouter([
     {
         path: "/",
-        element: <Login/>,
+        element: <Body/>,
+        children: [
+          { 
+            path: "/",
+            element: <Login/>,
+          }, 
+          {
+            path: "/browse",
+            element: <Browse/>,
+          },
+          {
+            path: "/gptS",
+            element: <GptPage/>
+          }
+        ]
     },
-    {
-      path: "/browse",
-      element: <Body/>,
-    },
+
       
   ]);
 
 
   return (
+    <Provider store={appStore}>
     <div className="App">
      <RouterProvider router={appRouter}>
-
      </RouterProvider>
     </div>
+    </Provider>
   );
 }
 
