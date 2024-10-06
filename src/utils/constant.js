@@ -13,6 +13,10 @@ export const POPULAR_API = "https://api.themoviedb.org/3/movie/popular?&page=1";
 export const TOP_RATED_API = "https://api.themoviedb.org/3/movie/top_rated?&page=1";
 export const UPCOMMING_API = "https://api.themoviedb.org/3/movie/upcoming?&page=1";
 
+export const SEARCH_TMDB = "https://api.themoviedb.org/3/search/movie?query=";
+
+export const GEMINI_AI_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+
 export const OPTIONS_TOKEN =(TOKEN)=> {
     return {method: 'GET',
     headers: {

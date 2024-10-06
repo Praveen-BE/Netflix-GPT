@@ -1,17 +1,17 @@
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import { useSelector } from 'react-redux';
-import GptPage from './GptPage';
+import GeminiPage from './GeminiPage';
 
 const Body = () => {
-  const gpts = useSelector((store)=>store.gpts.showGptSearch)
+  const gemini = useSelector((store)=>store.gemini.showGeminiSearch)
 
   return (
     <>
     { 
-      gpts ?
+      gemini ?
       <div>
-        <GptPage/>
+        <GeminiPage/>
       </div> :
       <div>
       <Header/>

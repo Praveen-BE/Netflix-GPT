@@ -12,9 +12,10 @@ const MovieCard = ({movieData}) => {
 
   // console.log(movieData);
   const { poster_path, title } = movieData;
+  if(!poster_path) return null;
   return (
-    <div className='p-4'>
-        <img alt={title} src={CDN_TMDB+poster_path} />
+    <div className='p-4 w-[200px]'>
+    <img alt={title} src={CDN_TMDB+poster_path} />
     </div>
   )
 }

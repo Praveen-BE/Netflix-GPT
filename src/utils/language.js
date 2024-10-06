@@ -7,15 +7,15 @@ export const SUPPORTED_LANGUAGES = [
 const lang = {
     en: {
         search : "Search",
-        gptSearchPlaceHolder : "What would you to watch today",
+        geminiSearchPlaceHolder : "What would you to watch today",
     },
     tn: {
         search : "தேடல்",
-        gptSearchPlaceHolder : "இன்று நீங்கள் என்ன பார்க்க வேண்டும்",
+        geminiSearchPlaceHolder : "இன்று நீங்கள் என்ன பார்க்க வேண்டும்",
     },
     hi: {
         search : "खोज",
-        gptSearchPlaceHolder : "आज आप क्या देखना चाहेंगे",
+        geminiSearchPlaceHolder : "आज आप क्या देखना चाहेंगे",
     },
 }
 

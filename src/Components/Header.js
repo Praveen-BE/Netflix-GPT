@@ -6,13 +6,13 @@ import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { removeUser, addUser } from '../utils/userSlice';
 import { USER_PROFILE } from '../utils/constant';
-import { toggleGptSearch } from '../utils/gptSlice';
+import { toggleGeminiSearch } from '../utils/geminiSlice';
 import { SUPPORTED_LANGUAGES } from '../utils/language';
 import { langChange } from '../utils/langSlice';
 
 const Header = () => {
   const user = useSelector((store)=>store.user);
-  const gpts = useSelector((store)=>store.gpts.showGptSearch);
+  const gemini = useSelector((store)=>store.gemini.showGeminiSearch);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // useEffect(()=>{
@@ -27,7 +27,7 @@ const Header = () => {
   }
 
   const handleToggleGPT = ()=>{
-    dispatch(toggleGptSearch());
+    dispatch(toggleGeminiSearch());
   }
 
   const handleLanguageChange = (e)=>{
@@ -73,7 +73,7 @@ const Header = () => {
         </div>
         <button className='mx-2 px-4 py-2 text-white bg-purple-800 rounded-lg' 
         onClick={()=>handleToggleGPT()}>
-        { gpts? "Home Page" :  "GPT Search" }
+        { gemini? "Home Page" :  "Gemini Search" }
         </button>
         <div>
         <img className='w-10 h-10' alt='ProfilePicture' src={USER_PROFILE}/>

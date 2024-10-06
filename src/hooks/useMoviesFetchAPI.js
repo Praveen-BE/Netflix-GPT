@@ -60,7 +60,7 @@ const useMoviesFetchAPI = () => {
         popularFetch();
         topRatedFetch();
         upcommingFetch();
-    });
+    },[]);
 
 }
 

@@ -16,7 +16,7 @@ const MoviesCardList = ({ catagory,moviesList}) => {
           <div className='flex'>
             {
               moviesList.map((movieData)=>
-                <div className='w-[200px]' key={movieData?.id}>
+                <div key={movieData?.id}>
               <MovieCard movieData={movieData}/>
               </div>)
             }

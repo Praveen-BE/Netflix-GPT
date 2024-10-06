@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { appStore } from './utils/appStore';
 import Browse from './Components/Browse';
 import Body from './Components/Body';
-import GptPage from './Components/GptPage';
+import GeminiPage from './Components/GeminiPage';
 
 function App() {
 
@@ -25,8 +25,8 @@ function App() {
             element: <Browse/>,
           },
           {
-            path: "/gptS",
-            element: <GptPage/>
+            path: "/gemini",
+            element: <GeminiPage/>
           }
         ]
     },
