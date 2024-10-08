@@ -4,6 +4,7 @@ import SecondaryCom from './SecondaryCom';
 import useMoviesFetchAPI from '../hooks/useMoviesFetchAPI';
 
 const Browse = () => {
+  // console.log("Browse");
     useMoviesFetchAPI();
   return (
     <div>

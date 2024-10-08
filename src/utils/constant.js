@@ -3,10 +3,17 @@ export const BG_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/47c2bc92-5a2a-
 export const USER_PROFILE = "https://wallpapers.com/images/hd/netflix-profile-pictures-5yup5hd2i60x7ew3.jpg";
 
 export const BG_PLAY_MOVIES = "https://api.themoviedb.org/3/movie/533535/videos?language=en-US";
+export const WATCH_MOVIE_1 = "https://api.themoviedb.org/3/movie/";
+export const WATCH_MOVIE_2 = "/videos?language=en-US";
 
 export const CDN_TMDB = "https://image.tmdb.org/t/p/w500";
 
 export const PLAYING_DATA = "https://api.themoviedb.org/3/movie/533535?api_key=";
+export const WATCH_MOVIE_DATA1 = "https://api.themoviedb.org/3/movie/";
+export const WATCH_MOVIE_DATA2 = "?api_key=";
+
+export const CREDITS1 = "https://api.themoviedb.org/3/movie/";
+export const CREDITS2 = "/credits";
 
 export const NOW_PLAYING_API = "https://api.themoviedb.org/3/movie/now_playing?&page=1";
 export const POPULAR_API = "https://api.themoviedb.org/3/movie/popular?&page=1";

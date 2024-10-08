@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 // import LOGO from "../utils/LogoSVG.svg";
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { removeUser, addUser } from '../utils/userSlice';
 import { USER_PROFILE } from '../utils/constant';
 import { toggleGeminiSearch } from '../utils/geminiSlice';
@@ -12,7 +12,7 @@ import { langChange } from '../utils/langSlice';
 
 const Header = () => {
   const user = useSelector((store)=>store.user);
-  const gemini = useSelector((store)=>store.gemini.showGeminiSearch);
+  // const gemini = useSelector((store)=>store.gemini.showGeminiSearch);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // useEffect(()=>{
@@ -26,9 +26,9 @@ const Header = () => {
     });
   }
 
-  const handleToggleGPT = ()=>{
-    dispatch(toggleGeminiSearch());
-  }
+  // const handleToggleGPT = ()=>{
+  //   dispatch(toggleGeminiSearch());
+  // }
 
   const handleLanguageChange = (e)=>{
     // console.log(e.target.value);
@@ -71,10 +71,16 @@ const Header = () => {
             }
           </select>
         </div>
-        <button className='mx-2 px-4 py-2 text-white bg-purple-800 rounded-lg' 
+        {/* <button className='mx-2 px-4 py-2 text-white bg-purple-800 rounded-lg' 
         onClick={()=>handleToggleGPT()}>
         { gemini? "Home Page" :  "Gemini Search" }
-        </button>
+        </button> */}
+        <Link to={"/browse"} className='mx-2 px-4 py-2 text-white bg-purple-800 rounded-lg'>
+          Home Page
+        </Link>
+        <Link to={"/gemini"} className='mx-2 px-4 py-2 text-white bg-purple-800 rounded-lg'>
+          Gemini Search
+        </Link>
         <div>
         <img className='w-10 h-10' alt='ProfilePicture' src={USER_PROFILE}/>
         <h1 className='absolute text-white'>{user?.displayName}</h1>

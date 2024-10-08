@@ -3,6 +3,7 @@ import userReducer from "./userSlice";
 import moviesReducer from "./moviesSlice";
 import geminiReducer from "./geminiSlice";
 import langReducer from "./langSlice";
+import watchReducer from "./watchSlice";
 
 export const appStore = configureStore({
     reducer: {
@@ -10,5 +11,6 @@ export const appStore = configureStore({
         movies: moviesReducer,
         gemini: geminiReducer,
         lang: langReducer,
+        watch: watchReducer,
     }
 });

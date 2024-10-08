@@ -1,6 +1,7 @@
 import React from 'react'
 import MovieCard from './MovieCard'
 import Shimmer from './Shimmer';
+import { Link } from 'react-router-dom';
 
 const MoviesCardList = ({ catagory,moviesList}) => {
 
@@ -16,9 +17,9 @@ const MoviesCardList = ({ catagory,moviesList}) => {
           <div className='flex'>
             {
               moviesList.map((movieData)=>
-                <div key={movieData?.id}>
+                <Link to={`/watch/${movieData?.id}`} key={movieData?.id}>
               <MovieCard movieData={movieData}/>
-              </div>)
+              </Link>)
             }
           </div>
         </div>

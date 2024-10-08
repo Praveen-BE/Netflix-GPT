@@ -7,27 +7,47 @@ import { appStore } from './utils/appStore';
 import Browse from './Components/Browse';
 import Body from './Components/Body';
 import GeminiPage from './Components/GeminiPage';
+import WatchPage from './Components/WatchPage';
+import Error from './Components/Error';
+import ProtectedRoute from './utils/ProtectedRoute';
 
 function App() {
-
 
   const appRouter = createBrowserRouter([
     {
         path: "/",
         element: <Body/>,
+        errorElement: <Error/>,
         children: [
           { 
             path: "/",
             element: <Login/>,
+            errorElement: <Error/>,
           }, 
           {
             path: "/browse",
-            element: <Browse/>,
+            element: 
+            <ProtectedRoute>
+              <Browse/>
+            </ProtectedRoute>
+              ,
+            errorElement: <Error/>,
           },
           {
             path: "/gemini",
-            element: <GeminiPage/>
-          }
+            element: <GeminiPage/>,
+            errorElement: <Error/>,
+          },
+          {
+            path: "/watch/:id",
+            element: <WatchPage/>,
+            errorElement: <Error/>,
+          },
+          {
+            path: "/gemini/watch/:id",
+            element: <WatchPage/>,
+            errorElement: <Error/>,
+          },
         ]
     },
 
@@ -36,12 +56,18 @@ function App() {
 
 
   return (
+
     <Provider store={appStore}>
+
     <div className="App">
-     <RouterProvider router={appRouter}>
-     </RouterProvider>
+      <div>
+    <RouterProvider router={appRouter}>
+    </RouterProvider>
     </div>
+    </div>
+
     </Provider>
+
   );
 }
 

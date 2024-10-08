@@ -25,8 +25,11 @@ const GeminiPage = () => {
   }
 
   const handleGeminiSearch= async()=>{
-  console.log(geminiPrompt.current.value);
-    const GeminiQuery = "Act as movies Recommendation system and suggest some movies for the query is "+geminiPrompt.current.value+". only give me name of 5 movies, comma seperated like the example result given ahead, example result: Garden, sholay, Don, Golmaal, Koi Mil Gaya";
+    console.log(geminiPrompt.current.value);
+    const GeminiQuery = "Act as movies Recommendation system and suggest some movies for the query is "
+    +geminiPrompt.current.value+
+    ". only give me name of 5 movies, comma seperated like the example result given ahead, "+
+    "example result: Garden, sholay, Don, Golmaal, Koi Mil Gaya";
     const result = await model.generateContent(GeminiQuery);
     const geminiResult = result.response.text();
     console.log(geminiResult);
@@ -49,8 +52,10 @@ const GeminiPage = () => {
 
   return (
     <div>
+      <div className='absolute top-0'>
         <img className='fixed -z-10 w-screen h-screen brightness-[50%]' alt='BackgroundImage' src={BG_URL}/>
-        <Header/>
+      </div>
+        {/* <Header/> */}
         <div className='flex justify-center'>
         <form onSubmit={(e)=>e.preventDefault()} className="w-11/12 flex p-1 justify-center">
             <input ref={geminiPrompt} className='w-9/12 p-3 bg-black rounded-l-lg border-[1px] border-black hover:border-white text-white'

@@ -16,7 +16,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
 
-
   const handleButtonClick = () =>{
     const isError = checkValidateData(email.current.value, password.current.value);
     // console.log(isValid);
