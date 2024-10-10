@@ -9,7 +9,7 @@ const PrimaryBackground = () => {
   return (
     <div className="absolute top-0 -z-10">
         <iframe
-        className="w-screen aspect-video bg-cover"
+        className="w-screen aspect-video bg-cover mt-8 md:mt-0"
         src={"https://www.youtube.com/embed/"+YT_KEY+"?&autoplay=1&mute=1"} 
         title="YouTube video player" 
         >

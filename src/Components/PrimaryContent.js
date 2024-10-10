@@ -10,8 +10,8 @@ const PrimaryContent = () => {
 
     const { title, overview } = bgData;
   return (
-    <div className="-mt-24 w-screen aspect-video bg-gradient-to-r from-black">
-    <div className='w-4/12 pl-20 pt-40'>
+    <div className="mt-0 md:-mt-24 w-screen aspect-video bg-gradient-to-r from-black">
+    <div className='w-4/12 pl-20 pt-40 invisible h-0 md:h-auto xl:visible'>
         <h1 className='text-4xl font-bold text-red-500 font-serif[Arial]'>{title}</h1>
         <h1 className='mt-8 w-full text-white'>{overview}</h1>
         <div>

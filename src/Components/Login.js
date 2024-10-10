@@ -66,13 +66,17 @@ const Login = () => {
     <div className='w-full h-full absolute top-0'>
 
       <div className='relative'>
+        <div className='invisible  md:visible'>
         <img className='w-screen h-screen -z-30 absolute brightness-[50%]' src={BG_URL} alt="backroundImage" />
+        </div>
+        <div className='w-screen absolute h-screen -z-50 bg-black'>
+        </div>
         <div className='flex w-full absolute mt-24 z-20 justify-center items-center'>
-            <form onSubmit={(e)=>e.preventDefault()} className='w-3/12 h-3/6 bg-black/60 p-8'>
+            <form onSubmit={(e)=>e.preventDefault()} className='w-full md:w-9/12 lg:w-3/12 h-3/6 bg-black/60 p-8'>
               <h1 className='my-2 text-white font-bold text-2xl'>{isSignIn?"Sign In": "Sign Up"}</h1>
-              { !isSignIn && <input ref={name} className='my-2 p-4 w-full bg-inherit text-white' type='text' placeholder='Enter Your Name'/>}
-              <input ref={email} className='my-2 p-4 w-full bg-inherit text-white' type='email' placeholder='Enter Your Email'/>
-              <input ref={password} className='my-2 p-4 w-full bg-inherit text-white' type='password' placeholder='Enter Your Password'/>
+              { !isSignIn && <input ref={name} className='my-2 p-4 w-full bg-gray-800 text-white' type='text' placeholder='Enter Your Name'/>}
+              <input ref={email} className='my-2 p-4 w-full bg-gray-800 text-white' type='email' placeholder='Enter Your Email'/>
+              <input ref={password} className='my-2 p-4 w-full bg-gray-800 text-white' type='password' placeholder='Enter Your Password'/>
               <h1 className='text-red-500 p-2'>{errorMessage}</h1>
               <button className='bg-red-700 w-full p-2 text-white'
               onClick={()=>handleButtonClick()}
@@ -90,7 +94,7 @@ const Login = () => {
         </div>
       </div>
 
-      <div className='absolute bottom-0 w-full h-5'>
+      <div className='fixed bottom-0 w-full'>
         <Footer/>
       </div>
     </div>   

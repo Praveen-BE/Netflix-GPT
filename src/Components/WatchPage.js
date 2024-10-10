@@ -30,19 +30,21 @@ const WatchPage = () => {
 
         <div>
           <div className="-mt-24 w-screen aspect-video bg-gradient-to-r from-black">
-            <div className='w-4/12 pl-20 pt-40'>
-                <h1 className='text-4xl font-bold text-red-500 font-serif[Arial]'>{watchData1?.title}</h1>
-                <h1 className='mt-8 w-full text-white'>{watchData1?.overview}</h1>
+            <div className='w-full lg:w-3/12 pl-1 md:pl-20 pt-40'>
+                <div className='h-0 md:h-auto invisible md:visible'>
+                  <h1 className='text-4xl font-bold text-red-500 font-serif[Arial]'>{watchData1?.title}</h1>
+                  <h1 className='mt-8 w-full text-white'>{watchData1?.overview}</h1>
                   <div>
                     <div className="w-8/12 pt-8 flex justify-between">
                       <button className="py-4 px-12 bg-white text-black font-bold rounded-xl">Play</button>
-                      <button className="py-4 px-12 bg-white bg-opacity-20 text-white font-bold rounded-xl">Info</button>
+                      <button className="py-4 ml-2 px-12 bg-white bg-opacity-20 text-white font-bold rounded-xl">Info</button>
                     </div>
                   </div>
-                  <div>
+                </div>
+                  <div className='mt-5'>
                     { cast.map((cast)=>(<div className='flex' key={cast?.name || cast?.original_name}>
                     <h1 className='text-white'>{cast?.name || cast?.original_name } </h1>
-                      <h1 className='text-red-500 ml-1'>{" As "+cast?.character || cast?.role}</h1>
+                      <h1 className='text-red-500 ml-0 md:ml-1'>{" As "+cast?.character || cast?.role}</h1>
                       </div>))
                     }
                   </div>

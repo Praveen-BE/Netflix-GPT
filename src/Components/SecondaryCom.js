@@ -10,8 +10,8 @@ const SecondaryCom = () => {
   
   
   return (
-    <div className="pt-1 -mt-4 bg-black">
-      <div className="-mt-96 bg-transparent relative z-50">
+    <div className="pt-1 -mt-5 md:-mt-60 2xl:-mt-40 bg-black">
+      <div className="mt-0 md:-mt-50 xl:-mt-56 bg-transparent relative z-50">
       <MoviesCardList catagory={"Now Playing Movies"} moviesList={nowPlayingMovies}/>
       <MoviesCardList catagory={"Poppular Movies"} moviesList={popularMovies}/>
       <MoviesCardList catagory={"Top Rated Movies"} moviesList={topRatedMovies}/>

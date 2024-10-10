@@ -12,14 +12,14 @@ const MoviesCardList = ({ catagory,moviesList}) => {
   // const movieData = moviesList[0];   
   return (
     <div className='mt-6 px-6'>
-        <h1 className='p-4 text-white font-bold text-2xl'>{catagory}</h1>
+        <h1 className='p-2 md:p-4 text-white font-bold text-lg md:text-2xl'>{catagory}</h1>
         <div className='flex overflow-x-scroll'>
           <div className='flex'>
             {
               moviesList.map((movieData)=>
-                <Link to={`/watch/${movieData?.id}`} key={movieData?.id}>
+                <div key={movieData?.id}>
               <MovieCard movieData={movieData}/>
-              </Link>)
+              </div>)
             }
           </div>
         </div>
